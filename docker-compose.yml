@@ -1,0 +1,22 @@
+zookeeper:
+  image: dockerkafka/zookeeper
+  ports:
+   - "2181:2181"
+   - "2888:2888"
+   - "3888:3888"
+   - "5000:5000"
+
+kafka:
+  image: dockerkafka/kafka
+  ports:
+    - "9092:9092"
+  links:
+    - zookeeper:zookeeper
+
+kafka-manager:
+  build: .
+  ports:
+    - "9000:9000"
+  links:
+    - zookeeper:zookeeper
+    - kafka:kafka
