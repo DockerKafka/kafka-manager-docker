@@ -3,6 +3,10 @@ kafka-manager-docker
 
 Dockerfile for [kafka manager](https://github.com/yahoo/kafka-manager). It is a tool from Yahoo Inc. for managing [Apache Kafka](http://kafka.apache.org).
 
+The image is available directly from [DockerHub](https://hub.docker.com/r/dockerkafka/kafka-manager/)
+
+You can browse the source in [GitHub](https://github.com/DockerKafka/kafka-manager-docker)
+
 ## Usage
 
 ### Pull the image.
