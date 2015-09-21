@@ -14,7 +14,7 @@ kafka:
     - zookeeper:zookeeper
 
 kafka-manager:
-  build: .
+  image: dockerkafka/kafka-manager
   environment:
   - ZK_HOSTS=zookeeper:2181
   ports:
