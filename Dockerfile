@@ -19,7 +19,9 @@ ENV PATH /opt/kafka-manager-${KM_VERSION}/bin:$PATH
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
+COPY ./image/conf /opt/kafka-manager-1.2.7/conf
+VOLUME ["/opt/kafka-manager-1.2.7/conf"]
+
 EXPOSE 9000
 
-#CMD ["kafka-manager","-Dconfig.file=conf/application.conf"]
-CMD ["/bin/bash"]
+CMD ["kafka-manager","-Dconfig.file=/opt/kafka-manager-1.2.7/conf/application.conf"]

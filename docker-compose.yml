@@ -15,8 +15,12 @@ kafka:
 
 kafka-manager:
   build: .
+  environment:
+  - ZK_HOSTS=zookeeper:2181
   ports:
     - "9000:9000"
   links:
     - zookeeper:zookeeper
     - kafka:kafka
+  volumes:
+    - ./image/conf:/opt/kafka-manager-1.2.7/conf
