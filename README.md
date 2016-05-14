@@ -18,10 +18,10 @@ $  docker pull dockerkafka/kafka-manager
 ```sh
 $  docker run -d --name kafkadocker_zookeeper_1  dockerkafka/zookeeper
 $  docker run -d --name kafkadocker_kafka_1 --link kafkadocker_zookeeper_1:zookeeper dockerkafka/kafka
-$  docker run -it --rm --link kafkadocker_zookeeper_1:zookeeper --link kafkadocker_kafka_1:kafka -p 9000:9000 -e ZK_HOSTS=zookeeper:2181 mdockerkafka/kafka-manager
+$  docker run -it --rm --link kafkadocker_zookeeper_1:zookeeper --link kafkadocker_kafka_1:kafka -p 9000:9000 -e ZK_HOSTS=zookeeper:2181 dockerkafka/kafka-manager
 ```
 
-Wisit [localhost:90000](localhost:90000).
+Wisit [localhost:9000](localhost:9000).
 
 ## Customization
 
